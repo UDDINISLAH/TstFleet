@@ -36,7 +36,7 @@ namespace TstFleet
                     searcher.Filter = "(&(objectClass=user)(objectCategory=person))";
 
                     try
-                    {
+                    {  
                         string Emp, Adm, aa, bb;
                         searcher.FindOne();
                         // usr = db.CovidUsers.SingleOrDefault(u => u.User_Name == user + "@republicworld.com");
