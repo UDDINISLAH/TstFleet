@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="TstFleet.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>R Bharat</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/w3.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div>
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header" style="height: 60px;">
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#CompanySubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            Information
+                        </a>
+                        <ul class="collapse list-unstyled" id="CompanySubmenu">
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Branch</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#customerSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-user"></i>
+                            Customer
+                        </a>
+                        <ul class="collapse list-unstyled" id="customerSubmenu">
+                            <li><a href="#">Customer Info</a></li>
+                            <li><a href="#">Contract</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-duplicate"></i>
+                            Sale Information
+                        </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="#">Sale Order</a></li>
+                            <li><a href="#">Sale Receipt</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-send"></i>
+                            Reporting
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Page Content Holder -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header" style="width: 250px;">
+                            <div style="float: left; width: 84%">
+                                <h3>
+                                    <a href="#">
+                                        <img src="images/Republic_TV.jpg" width="24%" style="padding: 0 5px 0 5px;" />Republic Fleet
+                                    </a>
+                                </h3>
+                            </div>
+                            <div style="float: right; width: 15%; padding-top: 0px;">
+                                <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                    <i class="glyphicon glyphicon-align-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown top-menu-item-xs">
+                                    <a href="#" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true" style="background: #ffffff;">
+                                        <img id="userimg" src="images/default.png" alt="user-img" class="img-circle" width="30" style="border: 1px solid" />
+                                    </a>
+                                    <ul class="dropdown-menu" style="padding: 10px;">
+                                        <li><a href="#" style="background: #ffffff;"><i class="glyphicon glyphicon-user"></i>Session["UserName"]</a></li>
+                                        <li class="divider"></li>
+                                        <li id="changepassword"><a href="#" style="background: #ffffff;"><i class="glyphicon glyphicon-lock"></i>Change Password</a></li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <input type="button" id="btnlogout" value="Log out" class="btn btn-default btn-flat" style="background: #ef0707; color: #fff; width: 100%;" />
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <form id="form1" runat="server">
+                    <div style="margin: 100px 10px 10px 20px;">
+                        <div id="con">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    <footer id="footer">
+        copyright @Republic Media Network  
+    </footer>
+    </div>
+    <!-- jQuery CDN -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
