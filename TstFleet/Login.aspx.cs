@@ -43,7 +43,7 @@ namespace TstFleet
                         Session["UserName"] = entry1.Username;
                         aa = entry1.Username;
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("select * from Employee where Email_Address='"+ aa +"'", con);
+                        SqlCommand cmd = new SqlCommand("select * from Employee where Email_Address='"+ aa + "' AND active=0 ", con);
 
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
