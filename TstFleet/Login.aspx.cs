@@ -13,17 +13,22 @@ namespace TstFleet
 {
     public partial class Loginn : System.Web.UI.Page
     {
+
+        string strConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        string str, UserName, Password, Employee_ID, Address, Email_Address, Department, Bussines_Unit;
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
         protected void Button1_Click(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection("Data Source=172.16.102.78;Initial Catalog=Fleet_IU;uid=sa;pwd=s0l@rnoida;");
-            //SqlCommand cmd = new SqlCommand("select * from Employee where Employee_Name=@Employee_Name", con);
-            //cmd.Parameters.AddWithValue("@Employee_Name", TextBox1.Text);
-            //cmd.Parameters.AddWithValue("", TextBox2.Text);
-            //cmd.Parameters.AddWithValue("word", TextBox2.Text);
+        {          
+            SqlConnection con = new SqlConnection(strConnString);
+            SqlCommand cmd = new SqlCommand("select * from Employee where Email_Address=@Email_Address", con);
+            
+            cmd.Parameters.AddWithValue("@Email_Address", TextBox1.Text);        
+            
+            cmd.Parameters.AddWithValue("", TextBox2.Text);
+            // cmd.Parameters.AddWithValue("word", TextBox2.Text);
 
             if (TextBox1.Text != null && TextBox2.Text != null)
             {
@@ -36,29 +41,46 @@ namespace TstFleet
                     searcher.Filter = "(&(objectClass=user)(objectCategory=person))";
 
                     try
-                    {  //islah   
-                        string Emp, Adm, aa, bb;
+                    {
                         searcher.FindOne();
                         // usr = db.CovidUsers.SingleOrDefault(u => u.User_Name == user + "@republicworld.com");
-                        Session["UserName"] = entry1.Username;
-                        aa = entry1.Username;
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand("select * from Employee where Email_Address='"+ aa + "' AND active=0 ", con);
+                        //Session["UserName"] = entry1.Username;
+                        SqlDataAdapter sda = new SqlDataAdapter(cmd);   
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        int RowCount = dt.Rows.Count;
+                        for (int i = 0; i < RowCount; i++)
+                        {
+                            Employee_ID = dt.Rows[i]["Employee_ID"].ToString();
+                            Session["Employee_ID"] = Employee_ID;
 
-                        int i = cmd.ExecuteNonQuery();
-                        if (i > 0)
-                        {
-                            Response.Redirect("WelcomeAdmin.aspx");
+                            UserName = dt.Rows[i]["Employee_Name"].ToString();
+                            Session["Employee_Name"] = UserName;
+
+                            Address = dt.Rows[i]["Address"].ToString();
+                            Session["Address"] = Address;
+
+                            Email_Address = dt.Rows[i]["Email_Address"].ToString();
+                            Session["Email_Address"] = Email_Address;
+
+                            Department = dt.Rows[i]["Department"].ToString();
+                            Session["Department"] = Department;
+
+                            Bussines_Unit = dt.Rows[i]["Bussines_Unit"].ToString();
+                            Session["Bussines_Unit"] = Bussines_Unit;
+
+                            if (Email_Address == TextBox1.Text)
+                            {
+                                //Session["Employee_Name"] = UserName;
+                                if (dt.Rows[i]["Is_Employee"].ToString() == "Employee")
+                                    Response.Redirect("WelcomeEmployee.aspx");
+                                // Response.Redirect("~/Admin/Admin.aspx");
+                                else
+                                    Response.Redirect("WelcomeAdmin.aspx");
+
+
+                            }
                         }
-                        else
-                        {
-                            Response.Redirect("WelcomeEmployee.aspx");
-                        }
-                        con.Close();
-                        //Session["UserEmailID"] = usr.User_Name;
-                        //Session["OfficeLocation"] = usr.Office_Location;
-                        //Session["EmpID"] = usr.Employee_ID;
-                        //return Json(usr, JsonRequestBehavior.AllowGet);
 
                     }
                     catch (Exception ex)
@@ -66,42 +88,18 @@ namespace TstFleet
                         // Session["UserName"] = user;
 
                         Session["error_msg"] = ex.Message;
-                       // Label1.Text = ex.Message;
+                        Label1.Text = ex.Message;
 
                         //return Json(1);
 
 
                     }
                 }
-                //SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                //DataTable dt = new DataTable();
-                //sda.Fill(dt);
-                //con.Open();
-                //int i = cmd.ExecuteNonQuery();
-                ////con.Close();
-                //if (dt.Rows.Count > 0)
-                //{
-                //    Response.Redirect("RegistrationForm.aspx");
-                //}
-                //else
-                //{
-                //    Label1.Text = "Your username and word is incorrect";
-                //}
 
-
-                //if (dt.Rows.Count > 0)
-                //{
-                //    Response.Redirect("Redirectform.aspx");
-                //}
-                //else
-                //{
-                //    Label1.Text = "Your username and word is incorrect";
-                //    Label1.ForeColor = System.Drawing.Color.Red;
-
-                //}
             }
             TextBox1.Text = "";
             TextBox2.Text = "";
+            TextBox1.Focus();
         }
     }
 }

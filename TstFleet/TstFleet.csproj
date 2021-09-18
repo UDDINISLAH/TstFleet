@@ -71,6 +71,9 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\styles.css" />
     <Content Include="css\w3.css" />
+    <Content Include="DataView.aspx" />
+    <Content Include="Driver.aspx" />
+    <Content Include="Driver_Login.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\calendar.png" />
     <Content Include="images\default.png" />
@@ -86,6 +89,27 @@
     <Content Include="WelcomeEmployee.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataView.aspx.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataView.aspx.designer.cs">
+      <DependentUpon>DataView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Driver.aspx.cs">
+      <DependentUpon>Driver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Driver.aspx.designer.cs">
+      <DependentUpon>Driver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Driver_Login.aspx.cs">
+      <DependentUpon>Driver_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Driver_Login.aspx.designer.cs">
+      <DependentUpon>Driver_Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

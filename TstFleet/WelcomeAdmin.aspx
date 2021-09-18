@@ -3,4 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Welcome Admin..........!!!</h1>
+    <asp:Label ID="Label1" runat="server" ></asp:Label>
+
 </asp:Content>

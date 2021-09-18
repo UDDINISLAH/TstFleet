@@ -1,10 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TstFleet.Loginn" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Driver_Login.aspx.cs" Inherits="TstFleet.Driver_Login" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+    
+
+
      <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
@@ -133,9 +135,7 @@
             });
         });
     </script>
-</head>
-<body>
-    <form id="form1" runat="server">
+
         <div class="wrapper">
           <div id="content">
                 <nav class="navbar navbar-default">
@@ -153,15 +153,17 @@
                 </nav>
             <div class="login-page">
                 <div class="form">        
-                      <asp:TextBox ID="TextBox1" runat="server"  placeholder="username" ></asp:TextBox>
-                       <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" placeholder="password"></asp:TextBox>              
+                      <asp:TextBox ID="TextBox1" runat="server"  placeholder="Mobile Number" ></asp:TextBox>
+                      <%-- <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" placeholder="password"></asp:TextBox> --%>             
                      <asp:Button ID="Button1" runat="server" Text="Log In" OnClick="Button1_Click" style="color: white;background-color: #43a047;"/>
-                     <p class="message">For Driver <a href="Driver_Login.aspx">Driver Login</a></p>  
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                     <p class="message">For Employee/Admin <a href="Login.aspx">Employee/ADMIN</a></p>  
+                    <asp:Label ID="Label1" runat="server" ></asp:Label>
                 </div>
             </div>
         </div>
      </div>
-    </form>
-</body>
-</html>
+  
+
+
+
+</asp:Content>

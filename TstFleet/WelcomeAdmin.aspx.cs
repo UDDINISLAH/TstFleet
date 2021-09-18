@@ -11,7 +11,10 @@ namespace TstFleet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Employee_Name"] != null || Session["Employee_ID"]!=null)
+            {
+                Label1.Text = "Welcome" + Session["Employee_Name"].ToString()+Session["Employee_Name"].ToString();
+            }
         }
     }
 }
