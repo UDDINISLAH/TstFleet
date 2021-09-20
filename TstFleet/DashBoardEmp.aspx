@@ -2,18 +2,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <div>
-        <asp:GridView ID="GridView1" CssClass="table-responsive" GridLines="None"  runat="server" AutoGenerateColumns="False" DataKeyNames="id" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
+      
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+ 
+       <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+        <asp:GridView ID="GridView1" CssClass="table table-bordered table-condensed"  runat="server" AutoGenerateColumns="False" DataKeyNames="id" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
             <Columns>
                 <asp:BoundField DataField="Employee_ID" HeaderText="Employee_ID." ReadOnly="true" />
                 <asp:BoundField DataField="Employee_Name" HeaderText="Employee_Name" ReadOnly="true" />
-                <asp:BoundField DataField="Mobile_Number" HeaderText="Mobile_Number" />
+                <asp:BoundField DataField="Mobile_Number" HeaderText="Mobile_Number" ReadOnly='true'/>
                 <asp:BoundField DataField="Address" HeaderText="Address" ReadOnly="true" />
                 <%--      <asp:BoundField DataField="Email_Address" HeaderText="Email_Address" />  --%>
                 <%--  <asp:BoundField DataField="Department" HeaderText="Department" />  --%>
                 <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="true" />
                 <%--      <asp:BoundField DataField="Bussines_unit" HeaderText="Bussines_unit" />--%>
-                <%--    <asp:BoundField DataField="Bussines_unit" HeaderText="Bussines_unit" /> --%>
+                 <asp:BoundField DataField="Drop_Pickup" HeaderText="Drop_Pickup" /> 
                 <asp:TemplateField HeaderText="City">
                     <ItemTemplate>
                         <asp:Label ID="lblCity" runat="server" Text='<%# Eval("Time")%>'></asp:Label>
@@ -34,5 +40,14 @@
         <div>
             <asp:Label ID="lblresult" runat="server"></asp:Label>
         </div>
+       </div>
+      </div>
     </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </asp:Content>

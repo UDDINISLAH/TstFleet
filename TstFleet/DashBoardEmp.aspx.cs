@@ -13,31 +13,21 @@ namespace TstFleet
     public partial class DashBoardEmp : System.Web.UI.Page
     {
         string strConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+      
         protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                gvbind();
-                //Attribute to show the Plus Minus Button.
-                GridView1.HeaderRow.Cells[0].Attributes["data-class"] = "expand";
-
-                //Attribute to hide column in Phone.
-                GridView1.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
-                GridView1.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
-                GridView1.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
-                GridView1.HeaderRow.Cells[5].Attributes["data-hide"] = "phone";
-                GridView1.HeaderRow.Cells[6].Attributes["data-hide"] = "phone";
-                GridView1.HeaderRow.Cells[7].Attributes["data-hide"] = "phone";
-                //Adds THEAD and TBODY to GridView.
-                GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
-            }
+        {           
+                if (!IsPostBack)
+                {
+                    gvbind();
+                }           
         }
 
         protected void gvbind()
         {
+            string EmpId = Session["Employee_ID"].ToString();
             SqlConnection con = new SqlConnection(strConnString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from Employee_Request", con);
+            SqlCommand cmd = new SqlCommand("Select * from Employee_Request where Employee_ID='"+EmpId+"'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);

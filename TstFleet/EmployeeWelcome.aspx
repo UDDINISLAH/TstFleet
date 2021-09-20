@@ -133,7 +133,6 @@
             background: url('https://i.imgur.com/VXWKoBD.png') top center no-repeat #fff;
             background-size: 55px 55px
         }
-        
     </style>
     <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
