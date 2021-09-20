@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="WelcomeEmployee.aspx.cs" Inherits="TstFleet.WelcomeEmployee" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Employee.Master" AutoEventWireup="true" CodeBehind="EmployeeWelcome.aspx.cs" Inherits="TstFleet.EmployeeWelcome" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -133,19 +133,11 @@
             background: url('https://i.imgur.com/VXWKoBD.png') top center no-repeat #fff;
             background-size: 55px 55px
         }
+        
     </style>
     <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-  <link media="screen" rel="stylesheet" href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/css/footable.min.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-footable/0.1.0/js/footable.min.js"></script>
-    <script type="text/javascript">
-        /* Applied Responsive For Grid View using footable js*/
-        $(function () {
-            $('[id*=GridView1]').footable();
-        });    
-    </script>
+    <link media="screen" rel="stylesheet" href='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' />
     <div class="container card-0 justify-content-center ">
         <div class="card-body px-sm-4 px-0">
             <div class="row justify-content-center mb-5">
@@ -233,40 +225,6 @@
 
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div>
-        <asp:GridView ID="GridView1" CssClass="footable" GridLines="None" Style="max-width: 100%" runat="server" AutoGenerateColumns="False" DataKeyNames="id" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
-            <Columns>
-                <asp:BoundField DataField="Employee_ID" HeaderText="Employee_ID." ReadOnly="true" />
-                <asp:BoundField DataField="Employee_Name" HeaderText="Employee_Name" ReadOnly="true" />
-                <asp:BoundField DataField="Mobile_Number" HeaderText="Mobile_Number" />
-                <asp:BoundField DataField="Address" HeaderText="Address" ReadOnly="true" />
-                <%--      <asp:BoundField DataField="Email_Address" HeaderText="Email_Address" />  --%>
-                <%--  <asp:BoundField DataField="Department" HeaderText="Department" />  --%>
-                <asp:BoundField DataField="Date" HeaderText="Date" ReadOnly="true" />
-                <%--      <asp:BoundField DataField="Bussines_unit" HeaderText="Bussines_unit" />--%>
-                <%--    <asp:BoundField DataField="Bussines_unit" HeaderText="Bussines_unit" /> --%>
-                <asp:TemplateField HeaderText="City">
-                    <ItemTemplate>
-                        <asp:Label ID="lblCity" runat="server" Text='<%# Eval("Time")%>'></asp:Label>
-                    </ItemTemplate>
-                    <EditItemTemplate>
-                        <asp:DropDownList ID="ddlCities" runat="server">
-                            <asp:ListItem Text="05:00 AM" Value="05:00 AM"></asp:ListItem>
-                            <asp:ListItem Text="06:00 AM" Value="06:00 AM"></asp:ListItem>
-                            <asp:ListItem Text="07:00 AM" Value="07:00 AM"></asp:ListItem>
-                        </asp:DropDownList>
-                    </EditItemTemplate>
-                </asp:TemplateField>
-                <%--  <asp:BoundField DataField="Gender" HeaderText="Gender" /> --%>
-                <asp:CommandField HeaderText="Edit" ShowEditButton="true" />
-                <asp:CommandField HeaderText="Delete" ShowDeleteButton="true" />
-            </Columns>
-        </asp:GridView>
-        <div>
-            <asp:Label ID="lblresult" runat="server"></asp:Label>
         </div>
     </div>
 </asp:Content>

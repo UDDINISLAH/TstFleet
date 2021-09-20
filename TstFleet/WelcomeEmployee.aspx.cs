@@ -91,7 +91,10 @@ namespace TstFleet
                 //Attribute to hide column in Phone.
                 GridView1.HeaderRow.Cells[2].Attributes["data-hide"] = "phone";
                 GridView1.HeaderRow.Cells[3].Attributes["data-hide"] = "phone";
-
+                GridView1.HeaderRow.Cells[4].Attributes["data-hide"] = "phone";
+                GridView1.HeaderRow.Cells[5].Attributes["data-hide"] = "phone";
+                GridView1.HeaderRow.Cells[6].Attributes["data-hide"] = "phone";
+                GridView1.HeaderRow.Cells[7].Attributes["data-hide"] = "phone";
                 //Adds THEAD and TBODY to GridView.
                 GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
             }

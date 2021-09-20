@@ -71,9 +71,11 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\styles.css" />
     <Content Include="css\w3.css" />
+    <Content Include="DashBoardEmp.aspx" />
     <Content Include="DataView.aspx" />
     <Content Include="Driver.aspx" />
     <Content Include="Driver_Login.aspx" />
+    <Content Include="EmployeeWelcome.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\calendar.png" />
     <Content Include="images\default.png" />
@@ -89,6 +91,13 @@
     <Content Include="WelcomeEmployee.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashBoardEmp.aspx.cs">
+      <DependentUpon>DashBoardEmp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashBoardEmp.aspx.designer.cs">
+      <DependentUpon>DashBoardEmp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataView.aspx.cs">
       <DependentUpon>DataView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -109,6 +118,20 @@
     </Compile>
     <Compile Include="Driver_Login.aspx.designer.cs">
       <DependentUpon>Driver_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.Master.cs">
+      <DependentUpon>Employee.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee.Master.designer.cs">
+      <DependentUpon>Employee.Master</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeWelcome.aspx.cs">
+      <DependentUpon>EmployeeWelcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeWelcome.aspx.designer.cs">
+      <DependentUpon>EmployeeWelcome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -152,6 +175,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Employee.Master" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
