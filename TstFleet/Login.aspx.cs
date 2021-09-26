@@ -73,10 +73,10 @@ namespace TstFleet
                             {
                                 //Session["Employee_Name"] = UserName;
                                 if (dt.Rows[i]["Is_Employee"].ToString() == "Employee")
-                                    Response.Redirect("DashBoardEmp.aspx");
+                                    Response.Redirect("Employee/DashBoardEmp.aspx");
                                 // Response.Redirect("~/Admin/Admin.aspx");
                                 else
-                                    Response.Redirect("DashboardAdmin.aspx");
+                                    Response.Redirect("Admin/DashboardAdmin.aspx");
                             }
                         }
 

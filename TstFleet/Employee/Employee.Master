@@ -5,10 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>R Bharat</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/w3.css" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/w3.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -17,10 +16,26 @@
         <div class="wrapper">
             <!-- Sidebar Holder -->
             <nav id="sidebar">
+              <%--  <div style="float: left; width: 84%">
+                    <h3>
+                        <a href="#">
+                            <img src="../images/Republic_TV.jpg" width="24%" style="padding: 0 5px 0 5px;" />Republic Fleet
+                        </a>
+                    </h3>
+                </div>--%>s
+              <div>
+                    <img src="../images/Republic_TV.jpg" width="24%" style="padding: 0 5px 0 5px;" />
+              </div>
                 <div class="sidebar-header" style="height: 60px;">
                 </div>
-
                 <ul class="list-unstyled components">
+                     <li class="active">
+                        <a href="DashBoardEmp.aspx">
+                            <i class="glyphicon glyphicon-home"></i>
+                           Republic Fleet
+                        </a>
+                    </li>
+
                     <li class="active">
                         <a href="DashBoardEmp.aspx">
                             <i class="glyphicon glyphicon-home"></i>
@@ -33,33 +48,12 @@
                             Request For Cab
                         </a>
                     </li>
-                    <%--    <li>
-                        <a href="#customerSubmenu" data-toggle="collapse" aria-expanded="false">
-                            <i class="glyphicon glyphicon-user"></i>
-                            Customer
+                    <li class="active">
+                        <a href="CabStatus.aspx">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            Cab Status
                         </a>
-                        <ul class="collapse list-unstyled" id="customerSubmenu">
-                            <li><a href="#">Customer Info</a></li>
-                            <li><a href="#">Contract</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
                     </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                            <i class="glyphicon glyphicon-duplicate"></i>
-                            Sale Information
-                        </a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#">Sale Order</a></li>
-                            <li><a href="#">Sale Receipt</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-send"></i>
-                            Reporting
-                        </a>
-                    </li>--%>
                 </ul>
             </nav>
             <!-- Page Content Holder -->
@@ -67,14 +61,7 @@
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
                         <div class="navbar-header" style="width: 250px;">
-                            <div style="float: left; width: 84%">
-                                <h3>
-                                    <a href="#">
-                                        <img src="images/Republic_TV.jpg" width="24%" style="padding: 0 5px 0 5px;" />Republic Fleet
-                                    </a>
-                                </h3>
-                            </div>
-                            <div style="float: right; width: 15%; padding-top: 0px;">
+                            <div style="">
                                 <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
                                     <i class="glyphicon glyphicon-align-left"></i>
                                 </button>
@@ -85,16 +72,19 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown top-menu-item-xs">
                                     <a href="#" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true" style="background: #ffffff;">
-                                        <img id="userimg" src="images/default.png" alt="user-img" class="img-circle" width="30" style="border: 1px solid" />
+                                        <img id="userimg" src="../images/default.png" alt="user-img" class="img-circle" width="30" style="border: 1px solid" />
                                     </a>
                                     <ul class="dropdown-menu" style="padding: 10px;">
                                         <li><a href="#" style="background: #ffffff;"><i class="glyphicon glyphicon-user"></i>Session["UserName"]</a></li>
                                         <li class="divider"></li>
                                         <li id="changepassword"><a href="#" style="background: #ffffff;"><i class="glyphicon glyphicon-lock"></i>Change Password</a></li>
                                         <li class="divider"></li>
-                                        <li>
-                                            <input type="button" id="btnlogout" value="Log out" class="btn btn-default btn-flat" style="background: #ef0707; color: #fff; width: 100%;" />
-                                        </li>
+                                        <%--   <li id="btnlogout" >
+                                            <a href="../Login.aspx">
+                                                <i class="glyphicon glyphicon-lock" color: #43a047;>
+                                                </i>Log out </a>
+                                        </li>--%>
+                                        <%-- //<input type="button" id="btnlogout" value="" class="btn btn-default btn-flat" style="background: #ef0707; color: #fff; width: 100%;" />--%>
                                     </ul>
                                 </li>
                             </ul>

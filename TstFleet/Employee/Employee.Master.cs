@@ -7,11 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace TstFleet
 {
-    public partial class DashBoardAdmin : System.Web.UI.Page
+    public partial class Employee : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+         
     }
 }

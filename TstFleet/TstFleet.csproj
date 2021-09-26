@@ -68,15 +68,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddDriver.aspx" />
+    <Content Include="Employee\CabStatus.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\styles.css" />
     <Content Include="css\w3.css" />
-    <Content Include="DashBoardAdmin.aspx" />
-    <Content Include="DashBoardEmp.aspx" />
-    <Content Include="DataView.aspx" />
-    <Content Include="Driver.aspx" />
+    <Content Include="Admin\DashBoardAdmin.aspx" />
+    <Content Include="Employee\DashBoardEmp.aspx" />
     <Content Include="Driver_Login.aspx" />
-    <Content Include="EmployeeWelcome.aspx" />
+    <Content Include="Employee\EmployeeWelcome.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="images\calendar.png" />
     <Content Include="images\default.png" />
@@ -86,44 +86,45 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.12.0.min.js" />
     <Content Include="Login.aspx" />
-    <Content Include="RegisterEmployee.aspx" />
+    <Content Include="Admin\ScheduleCab.aspx" />
+    <Content Include="tst.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.Master.cs">
+    <Compile Include="Admin\AddDriver.aspx.cs">
+      <DependentUpon>AddDriver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddDriver.aspx.designer.cs">
+      <DependentUpon>AddDriver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin.Master.designer.cs">
+    <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="DashBoardAdmin.aspx.cs">
+    <Compile Include="Admin\DashBoardAdmin.aspx.cs">
       <DependentUpon>DashBoardAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DashBoardAdmin.aspx.designer.cs">
+    <Compile Include="Admin\DashBoardAdmin.aspx.designer.cs">
       <DependentUpon>DashBoardAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DashBoardEmp.aspx.cs">
+    <Compile Include="Employee\CabStatus.aspx.cs">
+      <DependentUpon>CabStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\CabStatus.aspx.designer.cs">
+      <DependentUpon>CabStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\DashBoardEmp.aspx.cs">
       <DependentUpon>DashBoardEmp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DashBoardEmp.aspx.designer.cs">
+    <Compile Include="Employee\DashBoardEmp.aspx.designer.cs">
       <DependentUpon>DashBoardEmp.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DataView.aspx.cs">
-      <DependentUpon>DataView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DataView.aspx.designer.cs">
-      <DependentUpon>DataView.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Driver.aspx.cs">
-      <DependentUpon>Driver.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Driver.aspx.designer.cs">
-      <DependentUpon>Driver.aspx</DependentUpon>
     </Compile>
     <Compile Include="Driver_Login.aspx.cs">
       <DependentUpon>Driver_Login.aspx</DependentUpon>
@@ -132,18 +133,18 @@
     <Compile Include="Driver_Login.aspx.designer.cs">
       <DependentUpon>Driver_Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee.Master.cs">
+    <Compile Include="Employee\Employee.Master.cs">
       <DependentUpon>Employee.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee.Master.designer.cs">
+    <Compile Include="Employee\Employee.Master.designer.cs">
       <DependentUpon>Employee.Master</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeWelcome.aspx.cs">
+    <Compile Include="Employee\EmployeeWelcome.aspx.cs">
       <DependentUpon>EmployeeWelcome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EmployeeWelcome.aspx.designer.cs">
+    <Compile Include="Employee\EmployeeWelcome.aspx.designer.cs">
       <DependentUpon>EmployeeWelcome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
@@ -154,12 +155,12 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterEmployee.aspx.cs">
-      <DependentUpon>RegisterEmployee.aspx</DependentUpon>
+    <Compile Include="Admin\ScheduleCab.aspx.cs">
+      <DependentUpon>ScheduleCab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegisterEmployee.aspx.designer.cs">
-      <DependentUpon>RegisterEmployee.aspx</DependentUpon>
+    <Compile Include="Admin\ScheduleCab.aspx.designer.cs">
+      <DependentUpon>ScheduleCab.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -168,14 +169,21 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
+    <Compile Include="tst.aspx.cs">
+      <DependentUpon>tst.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tst.aspx.designer.cs">
+      <DependentUpon>tst.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Employee.Master" />
-    <Content Include="Admin.Master" />
+    <Content Include="Employee\Employee.Master" />
+    <Content Include="Admin\Admin.Master" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
@@ -185,7 +193,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Driver\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

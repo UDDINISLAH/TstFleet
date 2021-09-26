@@ -8,18 +8,24 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
 namespace TstFleet
 {
-    public partial class DashBoardEmp : System.Web.UI.Page
+    public partial class CabStatus : System.Web.UI.Page
     {
         string strConnString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-      
+
         protected void Page_Load(object sender, EventArgs e)
-        {           
-                if (!IsPostBack)
-                {
-                    gvbind();
-                }           
+        {
+            if (!IsPostBack)
+            {
+                gvbind();
+            }
+
+            if (Session["Employee_ID"] != null)
+            {
+                Label1.Text = (Session["Employee_Name"].ToString());
+            }
         }
 
         protected void gvbind()
@@ -27,7 +33,7 @@ namespace TstFleet
             string EmpId = Session["Employee_ID"].ToString();
             SqlConnection con = new SqlConnection(strConnString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from Employee_Request where Employee_ID='"+EmpId+"'", con);
+            SqlCommand cmd = new SqlCommand("Select * from Employee_Request where Employee_ID='" + EmpId + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -36,7 +42,7 @@ namespace TstFleet
             {
                 GridView1.DataSource = ds;
                 GridView1.DataBind();
-              
+
             }
             else
             {
@@ -48,6 +54,28 @@ namespace TstFleet
                 GridView1.Rows[0].Cells.Add(new TableCell());
                 GridView1.Rows[0].Cells[0].ColumnSpan = columncount;
                 GridView1.Rows[0].Cells[0].Text = "No Records Found";
+            }
+        }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                Label lblGender = (Label)e.Row.FindControl("lblsts");
+
+                if (!string.IsNullOrEmpty(lblGender.Text))
+                {
+                    if (lblGender.Text == "Assigned")
+                    {
+                        e.Row.Cells[4].ForeColor = System.Drawing.Color.Black;
+                        e.Row.Cells[4].BackColor = System.Drawing.Color.Green;
+                    }
+                    else
+                    {
+                        e.Row.Cells[4].ForeColor = System.Drawing.Color.Black;
+                        e.Row.Cells[4].BackColor = System.Drawing.Color.Orange;
+                    }
+                }
             }
         }
 
@@ -73,12 +101,13 @@ namespace TstFleet
             int userid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value.ToString());
             GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
             Label lblID = (Label)row.FindControl("lblID");
-            TextBox textMobile = (TextBox)row.Cells[2].Controls[0];
-            string city = (GridView1.Rows[e.RowIndex].FindControl("ddlCities") as DropDownList).SelectedItem.Value;
+            // string textMobile = (row.FindControl("TextBox1") as TextBox).Text;
+
+            string EmpSts = (GridView1.Rows[e.RowIndex].FindControl("ddlCities") as DropDownList).SelectedItem.Value;
             //TextBox texttime = (TextBox)row.Cells[5].Controls[0];
             GridView1.EditIndex = -1;
             con.Open();
-            SqlCommand cmd = new SqlCommand("update Employee_Request set Mobile_Number='" + textMobile.Text + "',Time='" + city + "' where ID='" + userid + "'", con);
+            SqlCommand cmd = new SqlCommand("update Employee_Request set Emp_Status='" + EmpSts + "' where ID='" + userid + "'", con);
             cmd.ExecuteNonQuery();
             con.Close();
             gvbind();
