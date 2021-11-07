@@ -5,107 +5,112 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>R Bharat</title>
+    <%-- <meta name="viewport" content="width=device-width, initial-scale=1" />--%>
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/styles.css" rel="stylesheet" />
     <link href="../css/w3.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+        @media only screen and (max-width: 600px) {
+            #Button22 {
+                background: #ef0707;
+                color: #fff;
+                width: 29%;
+                font-size: 30px;
+                float: right;
+                margin-top: -13%;
+            }
+        }
+        
+        #Button22 {
+            background: #ef0707;
+            color: #fff;
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <div class="wrapper">
-            <!-- Sidebar Holder -->
-            <nav id="sidebar">
-              <%--  <div style="float: left; width: 84%">
-                    <h3>
-                        <a href="#">
-                            <img src="../images/Republic_TV.jpg" width="24%" style="padding: 0 5px 0 5px;" />Republic Fleet
-                        </a>
-                    </h3>
-                </div>--%>s
-              <div>
-                    <img src="../images/Republic_TV.jpg" width="24%" style="padding: 0 5px 0 5px;" />
-              </div>
-                <div class="sidebar-header" style="height: 60px;">
-                </div>
-                <ul class="list-unstyled components">
-                     <li class="active">
-                        <a href="DashBoardEmp.aspx">
-                            <i class="glyphicon glyphicon-home"></i>
-                           Republic Fleet
-                        </a>
-                    </li>
 
-                    <li class="active">
-                        <a href="DashBoardEmp.aspx">
-                            <i class="glyphicon glyphicon-home"></i>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="EmployeeWelcome.aspx">
-                            <i class="glyphicon glyphicon-briefcase"></i>
-                            Request For Cab
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="CabStatus.aspx">
-                            <i class="glyphicon glyphicon-briefcase"></i>
-                            Cab Status
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- Page Content Holder -->
-            <div id="content">
-                <nav class="navbar navbar-default">
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header" style="height: 60px;">
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="CabStatus.aspx">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="EmployeeWelcome.aspx">
+                        <i class="glyphicon glyphicon-briefcase"></i>
+                        Request For Cab
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="DashBoardEmp.aspx">
+                        <i class="glyphicon glyphicon-briefcase"></i>
+                        Reports
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="UserProfile.aspx">
+                        <i class="glyphicon glyphicon-user"></i>
+                        User Profile
+                    </a>
+                </li>            
+            </ul>
+        </nav>
+        <!-- Page Content Holder -->
+
+        <div id="content">
+            <form id="form1" runat="server">
+                <nav class="navbar navbar-default" style="position: fixed; padding: 1px 0px;">
                     <div class="container-fluid">
-                        <div class="navbar-header" style="width: 250px;">
-                            <div style="">
+                        <div class="navbar-header" style="width: 250px;">                            
+                            <div style="float: right; width: 15%; padding-top: 0px;">
                                 <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
                                     <i class="glyphicon glyphicon-align-left"></i>
                                 </button>
                             </div>
-                        </div>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown top-menu-item-xs">
-                                    <a href="#" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true" style="background: #ffffff;">
-                                        <img id="userimg" src="../images/default.png" alt="user-img" class="img-circle" width="30" style="border: 1px solid" />
+                            <div style="float: left; width: 84%">
+                                <h3>
+                                    <a href="#">
+                                        <img src="../images/Republic_TV.jpg" width="24%" style="padding: 0 5px 0 5px;" />Republic Fleet
                                     </a>
-                                    <ul class="dropdown-menu" style="padding: 10px;">
-                                        <li><a href="#" style="background: #ffffff;"><i class="glyphicon glyphicon-user"></i>Session["UserName"]</a></li>
-                                        <li class="divider"></li>
-                                        <li id="changepassword"><a href="#" style="background: #ffffff;"><i class="glyphicon glyphicon-lock"></i>Change Password</a></li>
-                                        <li class="divider"></li>
-                                        <%--   <li id="btnlogout" >
-                                            <a href="../Login.aspx">
-                                                <i class="glyphicon glyphicon-lock" color: #43a047;>
-                                                </i>Log out </a>
-                                        </li>--%>
-                                        <%-- //<input type="button" id="btnlogout" value="" class="btn btn-default btn-flat" style="background: #ef0707; color: #fff; width: 100%;" />--%>
-                                    </ul>
-                                </li>
-                            </ul>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="nav navbar-nav navbar-right">
+                            <div class="menu-content">
+                             <%--   <asp:Button ID="Button22" class="btn btn-default btn-flat" runat="server" Text="LogOut" OnClick="Button1_Click" />--%>
+                                 <a href="../Login.aspx" id="Button22" class="btn btn-default btn-flat">LogOut</a>
+                                <%--  <input type="button" id="btnlogout" value="Log out" class="btn btn-default btn-flat" style="background: #ef0707; color: #fff; width: 100%;" />--%>
+                            </div>
                         </div>
                     </div>
                 </nav>
-                <form id="form1" runat="server">
-                    <div style="margin: 100px 10px 10px 20px;">
-                        <div id="con">
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                            </asp:ContentPlaceHolder>
-                        </div>
+                <div style="margin: 100px 10px 10px 20px;">
+                    <div id="con">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
-
-        <footer id="footer">
-            copyright @Republic Media Network  
-        </footer>
     </div>
+    <%--  <footer id="footer">
+            copyright @Republic Media Network  
+        </footer>--%>
+
     <!-- jQuery CDN -->
     <script src="js/jquery-1.12.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

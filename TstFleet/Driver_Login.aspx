@@ -2,16 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-
-    
-
-
-     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/w3.css" />
-    <style>
+ <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
         .login-page {
@@ -134,8 +125,12 @@
                 $('#sidebar').toggleClass('active');
             });
         });
-    </script>
-
+    </script>  
+    
+     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/w3.css" />  
         <div class="wrapper">
           <div id="content">
                 <nav class="navbar navbar-default">

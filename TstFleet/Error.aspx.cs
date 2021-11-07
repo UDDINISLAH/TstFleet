@@ -7,17 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace TstFleet
 {
-    public partial class Admin : System.Web.UI.MasterPage
+    public partial class Error : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-         
-        }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Session.RemoveAll();
-            Response.Redirect("../Login.aspx");
         }
     }
 }

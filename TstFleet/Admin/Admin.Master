@@ -12,6 +12,25 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+        @media only screen and (max-width: 600px) {
+            #Button22 {
+                background: #ef0707;
+                color: #fff;
+                width: 29%;
+                font-size: 30px;
+                float: right;
+                margin-top: -13%;
+            }
+        }
+
+        #Button22 {
+            background: #ef0707;
+            color: #fff;
+            font-size: 22px;
+            width: 138px;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -35,6 +54,12 @@
                         </a>
                     </li>
                     <li class="active">
+                        <a href="Setting.aspx">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            User Settings
+                        </a>
+                    </li>
+                    <li class="active">
                         <a href="AddDriver.aspx">
                             <i class="glyphicon glyphicon-briefcase"></i>
                             Add Driver
@@ -44,44 +69,32 @@
             </nav>
             <!-- Page Content Holder -->
             <div id="content">
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                        <div class="navbar-header" style="width: 250px;">
-                            <div style="float: left; width: 84%">
-                                <h3>
-                                    <a href="#">
-                                        <img src="../images/Republic_TV.jpg" width="24%" style="padding: 0 5px 0 5px;" />Republic Fleet
-                                    </a>
-                                </h3>
-                            </div>
-                            <div style="float: right; width: 15%; padding-top: 0px;">
-                                <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                    <i class="glyphicon glyphicon-align-left"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown top-menu-item-xs">
-                                    <a href="#" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true" style="background: #ffffff;">
-                                        <img id="userimg" src="../images/default.png" alt="user-img" class="img-circle" width="30" style="border: 1px solid" />
-                                    </a>
-                                    <ul class="dropdown-menu" style="padding: 10px;">
-                                        <li><a href="#" style="background: #ffffff;"><i class="glyphicon glyphicon-user"></i>Session["UserName"]</a></li>
-                                        <li class="divider"></li>
-                                        <li id="changepassword"><a href="#" style="background: #ffffff;"><i class="glyphicon glyphicon-lock"></i>Change Password</a></li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <input type="button" id="btnlogout" value="Log out" class="btn btn-default btn-flat" style="background: #ef0707; color: #fff; width: 100%;" />
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
                 <form id="form1" runat="server">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header" style="width: 270px;">
+                                <div style="float: left; width: 84%">
+                                    <h3>
+                                        <a href="#">
+                                            <img src="../images/Republic_TV.jpg" width="24%" style="padding: 0 5px 0 5px;" />Republic Fleet
+                                        </a>
+                                    </h3>
+                                </div>
+
+                                <div style="float: right; width: 15%; padding-top: 0px;">
+                                    <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                        <i class="glyphicon glyphicon-align-left"></i>
+                                    </button>
+                                </div>
+                            </div> 
+                             <div class="nav navbar-nav navbar-right">                                
+                                <div class="menu-content" style="border: outset;">
+                                    <%-- <asp:Button ID="Button22" class="btn btn-default btn-flat" runat="server" Text="LogOut" OnClick="Button1_Click" />--%>
+                                    <a href="../Login.aspx" id="Button22" class="btn btn-default btn-flat"><img src="../images/6.png"  style="height:40px;" />LogOut</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
                     <div style="margin: 100px 10px 10px 20px;">
                         <div id="con">
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -92,9 +105,9 @@
             </div>
         </div>
 
-        <footer id="footer">
+        <%--<footer id="footer">
             copyright @Republic Media Network  
-        </footer>
+        </footer>--%>
     </div>
     <!-- jQuery CDN -->
     <script src="js/jquery-1.12.0.min.js"></script>

@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="AddDriver.aspx.cs" Inherits="TstFleet.AddDriver" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Setting.aspx.cs" Inherits="TstFleet.Setting" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
     <style>
@@ -198,6 +199,22 @@
             justify-content: space-around;
         }
 
+        /*.btn-block {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        button {
+            width: 150px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #669999;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+        }*/
+
         button:hover {
             background: #a3c2c2;
         }
@@ -222,143 +239,67 @@
                         padding-bottom: 5px;
                     }
         }
-
-        .mydatagrid {
-            width: 100%;
-            border: solid 5px black;
-            min-width: 80%;
-        }
-
-        .header {
-            background-color: #646464;
-            font-family: Arial;
-            color: White;
-            border: none 0px transparent;
-            height: 25px;
-            text-align: center;
-            font-size: 16px;
-        }
-
-        .rows {
-            background-color: #fff;
-            font-family: Arial;
-            font-size: 14px;
-            color: #000;
-            min-height: 25px;
-            text-align: left;
-            border: none 0px transparent;
-        }
-
-            .rows:hover {
-                background-color: #ff8000;
-                font-family: Arial;
-                color: #fff;
-                text-align: left;
-            }
-
-        .selectedrow {
-            background-color: #ff8000;
-            font-family: Arial;
-            color: #fff;
-            font-weight: bold;
-            text-align: left;
-        }
-
-        .mydatagrid a /** FOR THE PAGING ICONS **/ {
-            background-color: Transparent;
-            padding: 5px 5px 5px 5px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-            .mydatagrid a:hover /** FOR THE PAGING ICONS HOVER STYLES**/ {
-                background-color: #000;
-                color: #fff;
-            }
-
-        .mydatagrid span /** FOR THE PAGING ICONS CURRENT PAGE INDICATOR **/ {
-            background-color: transparent;
-            color: #000;
-            padding: 5px 5px 5px 5px;
-        }
-
-        .pager {
-            background-color: #646464;
-            font-family: Arial;
-            color: White;
-            height: 30px;
-            text-align: left;
-        }
-
-          .mydatagrid td {
-            padding: 5px;
-            text-align-last: center;
-            background: content-box;
-            border: solid;
-        }
-
-        .mydatagrid th {
-            padding: 5px;
-        }
-
-        table > tbody > tr > th {
-            text-align: center;
-            background: #d01f27;
-            color: #ffffff;
-            border: 2px solid #ededed;
-        }
     </style>
+
+
     <div class="testbox">
         <div class="colums">
-            <div class="item">
-                <label for="fname">Driver Name<span>*</span></label>
-                <asp:TextBox ID="txt_DriverName" runat="server"></asp:TextBox>
+            <div class="item" style="width: auto;margin: inherit;">
+                <label for="fname">Select Employe ID<span>*</span></label>
+                <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
+                <asp:Button ID="Button2" class="btn-primary" runat="server" Text="Submit" Style="width: fit-content;" OnClick="Button1_Click1" />
+                <br />
+                <asp:Label ID="Label1" runat="server" Font-Size="x-large"></asp:Label>
             </div>
             <div class="item">
-                <label for="lname">Mobile<span>*</span></label>
-                <asp:TextBox ID="txt_Mobile" runat="server"></asp:TextBox>
+                <label for="fname">Full Name<span>*</span></label>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             </div>
             <div class="item">
-                <label for="address1">Email Address<span>*</span></label>
-                <asp:TextBox ID="Email" runat="server"></asp:TextBox>
+                <label for="lname">Emp ID<span>*</span></label>
+                <asp:TextBox ID="TextBox2" runat="server" ReadOnly="true"></asp:TextBox>
             </div>
             <div class="item">
-                <label for="address2">Driver Address<span>*</span></label>
-                <asp:TextBox ID="Address" runat="server"></asp:TextBox>
+                <label for="address1">Mobile<span>*</span></label>
+                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
             </div>
             <div class="item">
-                <label for="state">Cab Model<span>*</span></label>
-                <asp:TextBox ID="Cab_model" runat="server"></asp:TextBox>
+                <label for="address2">Email Address<span>*</span></label>
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
             </div>
             <div class="item">
-                <label for="zip">Cab Number<span>*</span></label>
-                <asp:TextBox ID="cab_number" runat="server"></asp:TextBox>
+                <label for="state">Department<span>*</span></label>
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            </div>
+            <div class="item">
+                <label for="zip">Gender<span>*</span></label>
+                <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+            </div>
+            <div class="item">
+                <label for="city">Address<span>*</span></label>
+                <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+            </div>
+            <div class="item">
+                <label for="phone">Channel<span>*</span></label>
+                <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
             </div>
         </div>
     </div>
-    <asp:Button ID="btn_register" class="btn-primary" runat="server" Text="Submit" OnClick="btn_register_Click" />
+    <asp:Button ID="btn_register" class="btn-primary" runat="server" Text="Submit" OnClick="Button1_Click" />
     <div>
         <asp:Label ID="lblmsg" runat="server"></asp:Label>
     </div>
-    <div style="padding: 2%;">
-        <div class="table-responsive" style="background-color: #fff; box-shadow: 0 0 8px #000000;">
-            <asp:GridView ID="GridView1" CssClass="mydatagrid" runat="server" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" AllowPaging="True" AllowSorting="true" PageSize="50" AutoGenerateColumns="False" DataKeyNames="id" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowDeleting="GridView1_RowDeleting" OnRowEditing="GridView1_RowEditing" OnRowUpdating="GridView1_RowUpdating">
-                <Columns>
-                    <asp:BoundField DataField="Driver_Name" HeaderText="Driver Name" />
-                    <asp:BoundField DataField="Mobile" HeaderText="Mobile" />
-                    <asp:BoundField DataField="Email" HeaderText="Email" />
-                    <asp:BoundField DataField="Driver_Address" HeaderText="Driver Address" />
-                    <asp:BoundField DataField="Cab_model" HeaderText="Cab Model" />
-                    <asp:BoundField DataField="Cab_Number" HeaderText="Cab Number" />
-                    <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true"
-                        EditText="<i aria-hidden='true' class='glyphicon glyphicon-pencil'></i>" DeleteText="<i aria-hidden='true' class='glyphicon glyphicon-trash'></i>"
-                        CancelText="<i aria-hidden='true' class='glyphicon glyphicon-remove'></i>" UpdateText="<i aria-hidden='true' class='glyphicon glyphicon-floppy-disk'></i>" ControlStyle-BackColor="transparent" />
-                </Columns>
-            </asp:GridView>
-            <div>
-                <asp:Label ID="lblresult" runat="server"></asp:Label>
-            </div>
-        </div>
-    </div>
+    <%--            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999"  
+            BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">  
+            <AlternatingRowStyle BackColor="#DCDCDC" />  
+            <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />  
+            <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />  
+            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />  
+            <RowStyle BackColor="#EEEEEE" ForeColor="Black" />  
+            <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />  
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />  
+            <SortedAscendingHeaderStyle BackColor="#0000A9" />  
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />  
+            <SortedDescendingHeaderStyle BackColor="#000065" />  
+        </asp:GridView> --%>
 </asp:Content>

@@ -77,18 +77,32 @@
     <Content Include="Employee\DashBoardEmp.aspx" />
     <Content Include="Driver_Login.aspx" />
     <Content Include="Employee\EmployeeWelcome.aspx" />
+    <Content Include="EmpReg.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\6.png" />
+    <Content Include="images\admin-login-layout.jpg" />
     <Content Include="images\calendar.png" />
     <Content Include="images\default.png" />
+    <Content Include="images\images.png" />
     <Content Include="images\img_avatar.png" />
+    <Content Include="images\maxresdefault.jpg" />
+    <Content Include="images\nodata.png" />
+    <Content Include="images\nodatafound.jpg" />
     <Content Include="images\Republic_TV.jpg" />
+    <Content Include="images\saedx-blog-featured-70.jpg" />
     <Content Include="images\ui-icons_222222_256x240.png" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.12.0.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Admin\ScheduleCab.aspx" />
+    <Content Include="Admin\Setting.aspx" />
     <Content Include="tst.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Employee\UserProfile.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AddDriver.aspx.cs">
@@ -112,6 +126,13 @@
     <Compile Include="Admin\DashBoardAdmin.aspx.designer.cs">
       <DependentUpon>DashBoardAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Employee\Employee.Master.cs">
+      <DependentUpon>Employee.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\Employee.Master.designer.cs">
+      <DependentUpon>Employee.Master</DependentUpon>
+    </Compile>
     <Compile Include="Employee\CabStatus.aspx.cs">
       <DependentUpon>CabStatus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,19 +154,29 @@
     <Compile Include="Driver_Login.aspx.designer.cs">
       <DependentUpon>Driver_Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\Employee.Master.cs">
-      <DependentUpon>Employee.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Employee\Employee.Master.designer.cs">
-      <DependentUpon>Employee.Master</DependentUpon>
-    </Compile>
     <Compile Include="Employee\EmployeeWelcome.aspx.cs">
       <DependentUpon>EmployeeWelcome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Employee\EmployeeWelcome.aspx.designer.cs">
       <DependentUpon>EmployeeWelcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpReg.aspx.cs">
+      <DependentUpon>EmpReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpReg.aspx.designer.cs">
+      <DependentUpon>EmpReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -162,6 +193,13 @@
     <Compile Include="Admin\ScheduleCab.aspx.designer.cs">
       <DependentUpon>ScheduleCab.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Setting.aspx.cs">
+      <DependentUpon>Setting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Setting.aspx.designer.cs">
+      <DependentUpon>Setting.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -176,16 +214,24 @@
     <Compile Include="tst.aspx.designer.cs">
       <DependentUpon>tst.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Employee\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Employee\Employee.Master" />
     <Content Include="Admin\Admin.Master" />
+    <Content Include="Employee\Employee.Master" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

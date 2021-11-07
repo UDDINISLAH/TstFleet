@@ -5,12 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/w3.css" />
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+        html, body {
+            min-height: 100%;
+            background: linear-gradient(-20deg, rgb(255, 255, 255) 50%, #d01f27 50%);
+        }
 
         .login-page {
             width: 360px;
@@ -120,24 +125,25 @@
                     }
 
         body {
-           background-color:#fafafa;
+            background-color: #fafafa;
             font-family: "Roboto", sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+
+        @media only screen and (max-width: 600px) {
+            body {
+                width: 360px;
+                padding: 32% 0 0;
+                margin: auto;
+            }
+        }
     </style>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="wrapper">
-          <div id="content">
+            <div id="content">
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
                         <div class="navbar-header" style="width: 250px;">
@@ -151,17 +157,18 @@
                         </div>
                     </div>
                 </nav>
-            <div class="login-page">
-                <div class="form">        
-                      <asp:TextBox ID="TextBox1" runat="server"  placeholder="username" ></asp:TextBox>
-                       <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" placeholder="password"></asp:TextBox>              
-                     <asp:Button ID="Button1" runat="server" Text="Log In" OnClick="Button1_Click" style="color: white;background-color: #43a047;"/>
-                     <p class="message">For Driver <a href="Driver_Login.aspx">Driver Login</a></p>  
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <div class="login-page">
+                    <div class="form">
+                        <asp:TextBox ID="TextBox1" runat="server" placeholder="username" required></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" placeholder="password" required></asp:TextBox>
+                        <asp:Button ID="Button1" runat="server" Text="Log In" OnClick="Button1_Click" Style="color: white; background-color: #43a047;" />
+                          <asp:Label ID="Label1" runat="server" Text="" style="display: inline-block;color: #ef0e0e;font-size: x-large;font-weight: bold;"></asp:Label>
+                     <%--   <p class="message">For Driver <a href="Driver_Login.aspx">Driver Login</a></p>--%>
+                        <p class="message">*<a href="EmpReg.aspx">Employee Registration</a></p>                      
+                    </div>
                 </div>
             </div>
         </div>
-     </div>
     </form>
 </body>
 </html>
