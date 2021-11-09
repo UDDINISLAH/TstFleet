@@ -131,7 +131,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="table-responsive" style="background-color: whitesmoke; margin-top: 2%; box-shadow: 0 0 8px #000000;">
-                    <div style="font-family: ui-monospace; padding: 5px 25px 0px 25px;background: darkcyan;color: black;">
+                    <div style="font-family: ui-monospace; padding: 5px 25px 0px 25px; background: darkcyan; color: black;">
                         <h4 style="border: ridge; width: fit-content;">Filters To Select
                         <asp:DropDownList ID="ddlCountry" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Country_Changed">
                             <asp:ListItem Text="Select All" Value=""></asp:ListItem>
@@ -140,53 +140,53 @@
                         </asp:DropDownList>
                         </h4>
                     </div>
-                <asp:GridView ID="GridView1" CssClass="mydatagrid" runat="server" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ID" OnPageIndexChanging="GridView1_PageIndexChanging" AllowSorting="true" PageSize="50">
-                    <Columns>
-                        <asp:BoundField DataField="Employee_ID" HeaderText="Employee_ID." ReadOnly="true" />
-                        <asp:BoundField DataField="Employee_Name" HeaderText="Employee_Name" ReadOnly="true" />
-                        <asp:BoundField DataField="Gender" HeaderText="Gender" ReadOnly='true' />
-                        <asp:BoundField DataField="Mobile_Number" HeaderText="Mobile_Number" ReadOnly='true' />
-                        <asp:BoundField DataField="Address" HeaderText="Address" />
-                        <asp:BoundField DataField="Emp_Date" HeaderText="Date" DataFormatString="{0:dd/MM/yyyy}" ReadOnly="true" />
-                        <asp:BoundField DataField="Drop_Pickup" HeaderText="Drop/Pickup" ReadOnly='true' />
-                        <asp:BoundField DataField="Time" HeaderText="Office Time" ReadOnly='true' />
+                    <asp:GridView ID="GridView1" CssClass="mydatagrid" runat="server" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ID" OnPageIndexChanging="GridView1_PageIndexChanging" AllowSorting="true" PageSize="50">
+                        <Columns>
+                            <asp:BoundField DataField="Employee_ID" HeaderText="Employee_ID." ReadOnly="true" />
+                            <asp:BoundField DataField="Employee_Name" HeaderText="Employee_Name" ReadOnly="true" />
+                            <asp:BoundField DataField="Gender" HeaderText="Gender" ReadOnly='true' />
+                            <asp:BoundField DataField="Mobile_Number" HeaderText="Mobile_Number" ReadOnly='true' />
+                            <asp:BoundField DataField="Address" HeaderText="Address" />
+                            <asp:BoundField DataField="Emp_Date" HeaderText="Date" DataFormatString="{0:dd/MM/yyyy}" ReadOnly="true" />
+                            <asp:BoundField DataField="Drop_Pickup" HeaderText="Drop/Pickup" ReadOnly='true' />
+                            <asp:BoundField DataField="Time" HeaderText="Office Time" ReadOnly='true' />
 
-                        <asp:TemplateField HeaderText="PickupTime" ItemStyle-Width="30">
-                            <ItemTemplate>
-                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("PickupTime") %>'></asp:Label>
-                            </ItemTemplate>
-                            <EditItemTemplate>
-                                <asp:TextBox ID="TextBox1" type="time" runat="server"></asp:TextBox>
-                            </EditItemTemplate>
-                        </asp:TemplateField>
+                            <asp:TemplateField HeaderText="PickupTime" ItemStyle-Width="30">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("PickupTime") %>'></asp:Label>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TextBox1" type="time" runat="server"></asp:TextBox>
+                                </EditItemTemplate>
+                            </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Cab No">
-                            <EditItemTemplate>
-                                <asp:DropDownList ID="DropDownList1" runat="server">
-                                </asp:DropDownList>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("CabNo") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Cab No">
+                                <EditItemTemplate>
+                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                    </asp:DropDownList>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("CabNo") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Driver Info">
-                            <EditItemTemplate>
-                                <asp:DropDownList ID="DropDownList2" runat="server">
-                                </asp:DropDownList>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("Driver_Info") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Driver Info">
+                                <EditItemTemplate>
+                                    <asp:DropDownList ID="DropDownList2" runat="server">
+                                    </asp:DropDownList>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("Driver_Info") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
 
-                        <asp:TemplateField HeaderText="Emp Status">
-                            <ItemTemplate>
-                                <asp:Label ID="lblEmpsts" runat="server" Text='<%# Eval("Emp_Status")%>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>
+                            <asp:TemplateField HeaderText="Emp Status">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblEmpsts" runat="server" Text='<%# Eval("Emp_Status")%>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
                 </div>
             </div>
         </div>

@@ -3,17 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/smoothness/jquery-ui.css" />
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"></script>
+    <%-- for Drag&drop Library   --%>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
 
-   <script type="text/javascript">     
+    <script type="text/javascript">     
         $(function () {
             $("[id*=GridView1]").sortable({
                 items: 'tr:not(tr:first-child)',
@@ -31,10 +30,10 @@
                 }
             });
         });
-       function openModal() {
-         // debugger
-        $('#myModal').modal('show');
-    }
+        function openModal() {
+            //debugger
+            $('#myModal').modal('show');
+        }
     </script>
 
     <style>
@@ -152,6 +151,14 @@
             filter: alpha(opacity=20);
             opacity: 1.2;
         }
+
+            .close:focus, .close:hover {
+                color: #fff;
+                text-decoration: none;
+                cursor: pointer;
+                filter: alpha(opacity=50);
+                opacity: 2.5;
+            }
     </style>
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="container" style="width: 100%;">
@@ -159,8 +166,8 @@
             <div class="col-md-12">
                 <div class="table-responsive" style="background-color: #fff; box-shadow: 0 0 8px #000000;">
                     <div style="font-family: ui-monospace; padding: 5px 25px 0px 25px; background: darkcyan; color: black;">
-                        <h4 style="border: ridge; width: fit-content;">Filters To Select
-                        <asp:DropDownList ID="ddlCountry" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Country_Changed">
+                        <h4 style="border: ridge; width: fit-content; color: white">Filters To Select
+                        <asp:DropDownList ID="ddlCountry" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Country_Changed" Style="color: black">
                             <asp:ListItem Text="Select All" Value=""></asp:ListItem>
                             <asp:ListItem Text="Pick" Value="Pick"></asp:ListItem>
                             <asp:ListItem Text="Drop" Value="Drop"></asp:ListItem>
@@ -217,7 +224,7 @@
 
                             <asp:TemplateField HeaderText="Cab No">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="lnkBtnEdit" runat="server" Text="" CssClass="btn btn-info"  OnClientClick="openModal();return false;" OnClick="Display" >
+                                    <asp:LinkButton ID="lnkBtnEdit" runat="server" Text="" CssClass="btn btn-info" OnClick="Display">
                                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("CabNo") %>' Style="background-color: #fbff00; color: #000000;"></asp:Label>
                                     </asp:LinkButton>
                                     <%--   <asp:Label ID="Label1" runat="server" Text='<%# Bind("Cab_Number") %>'></asp:Label>--%>
@@ -288,19 +295,9 @@
                                     </Columns>
                                 </asp:GridView>
                             </div>
-                            <%--      <div class="form-group">
-                                <asp:Label ID="Label1" runat="server" Text="Time"></asp:Label>
-                                <asp:Label ID="lblmonth" runat="server" Text=""></asp:Label>
-                            </div>
-                            <div class="form-group">
-                                <asp:Label ID="lblAmount" runat="server" Text="Time"></asp:Label>
-                                <asp:TextBox ID="txtAmount" runat="server" TabIndex="3" MaxLength="75" CssClass="form-control"
-                                    placeholder="Enter Amount"></asp:TextBox>
-                            </div>--%>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <%--  <asp:Button ID="btnSave" runat="server" Text="Pay" CssClass="btn btn-info" />--%>
                         <button type="button" class="btn btn-info" data-dismiss="modal">
                             Close</button>
                     </div>
@@ -308,47 +305,4 @@
             </div>
         </div>
     </div>
-   <%-- <div class="container">
-        <h2>Modal Example</h2>
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Open Modal</button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal1" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                   <div class="modal-content" style="width: max-content; background: darkslategray;">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            &times;</button>
-                        <h4 class="modal-title" style="background: #d01f27; font-size: x-large; text-align: -webkit-center; color: aliceblue;">Cab Status oF Employee</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                            <div class="form-group" style="background: yellowgreen; font-size: x-large; text-align: -webkit-center;">
-                                <asp:Label ID="Label1" runat="server" Text="Cab No: "></asp:Label>
-                                <asp:Label ID="Label5" runat="server" Text="" Style="background: yellow; color: black; border-style: DOUBLE;"></asp:Label>
-                            </div>
-                            <div class="form-group">
-                                <asp:GridView ID="GridView2" runat="server" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" AutoGenerateColumns="False" DataKeyNames="id">
-                                    <Columns>
-                                        <asp:BoundField DataField="Employee_ID" HeaderText="Emp ID" />
-                                        <asp:BoundField DataField="Employee_Name" HeaderText="Emp Name" />
-                                        <asp:BoundField DataField="Gender" HeaderText="Gender" />
-                                        <asp:BoundField DataField="PickupTime" HeaderText="PickupTime" />
-                                        <asp:BoundField DataField="Drop_Pickup" HeaderText="Drop Pickup" />
-                                        <asp:BoundField DataField="Driver_Info" HeaderText="Driver Info" />
-                                    </Columns>
-                                </asp:GridView>
-                            </div>                         
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-info" data-dismiss="modal">
-                            Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>--%>
 </asp:Content>

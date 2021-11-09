@@ -64,11 +64,11 @@ namespace TstFleet
                 TextBox6.Text = DR1["Gender"].ToString();
                 TextBox7.Text = DR1["Permanent_Address"].ToString();
                 TextBox8.Text = DR1["Bussines_Unit"].ToString();
-                Label1.Text = "record found";
+                Label1.Text = "Record Found";
             }
             else
             {
-                Label1.Text = "record Not found";
+                Label1.Text = "Record Not Found";
             }
             con.Close();
         }

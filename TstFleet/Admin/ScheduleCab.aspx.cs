@@ -314,6 +314,7 @@ namespace TstFleet
                 GridView1.DataSource = dataView;
                 GridView1.Columns[9].Visible = false;
                 GridView1.Columns[13].Visible = false;
+                GridView1.Columns[12].Visible = false;
                 GridView1.DataBind();
 
                 GridView1.HeaderRow.BackColor = Color.White;
@@ -367,7 +368,7 @@ namespace TstFleet
 
             SqlConnection con = new SqlConnection(strConnString);
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from Employee_Request where CabNo ='" + lblstudentid.Text + "' and Date between '" + DateToday + "' and '" + DateTom + "' order by Date desc", con);
+            SqlCommand cmd = new SqlCommand("Select * from Employee_Request where CabNo ='" + lblstudentid.Text + "' and Emp_Date between '" + DateToday + "' and '" + DateTom + "' order by Date desc", con);
             cmd.Parameters.AddWithValue("@DateTom", DateTom);
             cmd.Parameters.AddWithValue("@DateToday", DateToday);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -395,7 +396,7 @@ namespace TstFleet
                 GridView2.Rows[0].Cells[0].Text = "No Records Found";
             }
             //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none","<script>$('#mymodal').modal('show');</script>", true);
-           // ClientScript.RegisterStartupScript(this.GetType(), "Pop", "openModal();", true);
+            ClientScript.RegisterStartupScript(this.GetType(), "Pop", "openModal();", true);
             //   ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$(document).ready(function () {$('#myModal').modal();});", true);
         }
     

@@ -20,6 +20,7 @@
             font-size: 14px;
             color: #666;
             line-height: 22px;
+        
         }
 
         h1 {
@@ -51,6 +52,7 @@
             background: #fff;
             box-shadow: 0 0 8px #000000;
             margin-left: 16%;
+                    /*background: gold;*/
         }
 
         .banner {
@@ -74,13 +76,15 @@
 
         input, select, textarea {
             margin-bottom: 10px;
-            border: 1px solid #ccc;
+            border: 2px solid #000;
             border-radius: 3px;
         }
 
         input {
             width: calc(100% - 10px);
             padding: 5px;
+            color: black;
+            font-weight: bold;
         }
 
             input[type="date"] {
@@ -97,19 +101,22 @@
         }
 
         .item input:hover, .item select:hover, .item textarea:hover {
-            border: 1px solid transparent;
+            border: 1px solid black;
             box-shadow: 0 0 3px 0 #669999;
             color: #669999;
         }
 
         .item {
             position: relative;
-            margin: 10px 0;
+            margin: auto;
+            line-height: 48px;
         }
 
-            .item span {
-                color: red;
-            }
+        }
+
+        .item span {
+            color: red;
+        }
 
         .week {
             display: flex;
@@ -199,22 +206,6 @@
             justify-content: space-around;
         }
 
-        /*.btn-block {
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        button {
-            width: 150px;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background: #669999;
-            font-size: 16px;
-            color: #fff;
-            cursor: pointer;
-        }*/
-
         button:hover {
             background: #a3c2c2;
         }
@@ -240,56 +231,60 @@
                     }
         }
     </style>
-
-
-    <div class="testbox">
-        <div class="colums">
-            <div class="item" style="width: auto;margin: inherit;">
-                <label for="fname">Select Employe ID<span>*</span></label>
-                <asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList>
-                <asp:Button ID="Button2" class="btn-primary" runat="server" Text="Submit" Style="width: fit-content;" OnClick="Button1_Click1" />
-                <br />
-                <asp:Label ID="Label1" runat="server" Font-Size="x-large"></asp:Label>
-            </div>
-            <div class="item">
-                <label for="fname">Full Name<span>*</span></label>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            </div>
-            <div class="item">
-                <label for="lname">Emp ID<span>*</span></label>
-                <asp:TextBox ID="TextBox2" runat="server" ReadOnly="true"></asp:TextBox>
-            </div>
-            <div class="item">
-                <label for="address1">Mobile<span>*</span></label>
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            </div>
-            <div class="item">
-                <label for="address2">Email Address<span>*</span></label>
-                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-            </div>
-            <div class="item">
-                <label for="state">Department<span>*</span></label>
-                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-            </div>
-            <div class="item">
-                <label for="zip">Gender<span>*</span></label>
-                <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
-            </div>
-            <div class="item">
-                <label for="city">Address<span>*</span></label>
-                <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
-            </div>
-            <div class="item">
-                <label for="phone">Channel<span>*</span></label>
-                <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+    <div style="font-size: 16px;margin: 125px 10px 10px 20px;">
+        <div>
+            <div style="font-family: ui-monospace; padding: 5px 25px 0px 25px; background: darkcyan; color: black;">
+                <h4 style="border: ridge; width: fit-content; color: white">Select EmpId
+                       <asp:DropDownList ID="DropDownList2" runat="server" Style="color: black;"></asp:DropDownList>
+                    <asp:Button ID="Button2" class="btn-primary" runat="server" Text="Submit" Style="width: auto; color: white; background: #d01f27; border-style: inset;" OnClick="Button1_Click1" />
+                    <asp:Label ID="Label1" runat="server" style="font-size: X-Large;font-weight: bold;font-family: cursive;"></asp:Label>
+                </h4>
             </div>
         </div>
-    </div>
-    <asp:Button ID="btn_register" class="btn-primary" runat="server" Text="Submit" OnClick="Button1_Click" />
-    <div>
-        <asp:Label ID="lblmsg" runat="server"></asp:Label>
-    </div>
-    <%--            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999"  
+
+        <div class="testbox">
+            <div class="colums">
+                <div class="item" style="width: auto; margin: inherit;">
+                </div>
+                <div class="item">
+                    <label for="fname">Full Name<span>*</span></label>
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                </div>
+                <div class="item">
+                    <label for="lname">Emp ID<span>*</span></label>
+                    <asp:TextBox ID="TextBox2" runat="server" ReadOnly="true"></asp:TextBox>
+                </div>
+                <div class="item">
+                    <label for="address1">Mobile<span>*</span></label>
+                    <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                </div>
+                <div class="item">
+                    <label for="address2">Email Address<span>*</span></label>
+                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                </div>
+                <div class="item">
+                    <label for="state">Department<span>*</span></label>
+                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                </div>
+                <div class="item">
+                    <label for="zip">Gender<span>*</span></label>
+                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                </div>
+                <div class="item">
+                    <label for="city">Address<span>*</span></label>
+                    <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                </div>
+                <div class="item">
+                    <label for="phone">Channel<span>*</span></label>
+                    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                </div>
+            </div>
+        </div>
+        <asp:Button ID="btn_register" class="btn-primary" runat="server" Text="Submit" OnClick="Button1_Click" />
+        <div>
+            <asp:Label ID="lblmsg" runat="server"></asp:Label>
+        </div>
+        <%--            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999"  
             BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">  
             <AlternatingRowStyle BackColor="#DCDCDC" />  
             <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />  
@@ -302,4 +297,5 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />  
             <SortedDescendingHeaderStyle BackColor="#000065" />  
         </asp:GridView> --%>
+    </div>
 </asp:Content>
