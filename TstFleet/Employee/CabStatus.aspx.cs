@@ -139,7 +139,7 @@ namespace TstFleet
             SqlConnection con = new SqlConnection(strConnString);
             con.Open();
             //  SqlCommand cmd = new SqlCommand("Select * from Employee_Request where Employee_ID='" + EmpId + "' and Date = '" + DateTom + "'", con);
-            SqlCommand cmd = new SqlCommand("Select* from Employee_Request where CabNo='" + lbl1.Text + "' and Emp_date ='" + DateTom + "' and Drop_pickup='Pick'", con);
+            SqlCommand cmd = new SqlCommand("Select* from Employee_Request where CabNo='" + lbl1.Text + "' and Emp_date ='" + DateToday + "' and Drop_pickup='Pick'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -283,7 +283,7 @@ namespace TstFleet
             string EmpSts = "Yes";
             SqlConnection con = new SqlConnection(strConnString);
             con.Open();
-            SqlCommand com = new SqlCommand("update Employee_Request set Emp_Status = '" + EmpSts + "' where Employee_ID = '" + EmpId + "'AND Drop_Pickup='Pick' AND Emp_date = '" + DateTom + "' ", con);
+            SqlCommand com = new SqlCommand("update Employee_Request set Emp_Status = '" + EmpSts + "' where Employee_ID = '" + EmpId + "'AND Drop_Pickup='Pick' AND Emp_date = '" + DateToday + "' ", con);
             int kk = com.ExecuteNonQuery();
             if (kk != 0)
             {
@@ -303,7 +303,7 @@ namespace TstFleet
             string EmpSts = "No";
             SqlConnection con = new SqlConnection(strConnString);
             con.Open();
-            SqlCommand com = new SqlCommand("update Employee_Request set Emp_Status = '" + EmpSts + "' where Employee_ID = '" + EmpId + "'AND Drop_Pickup='Pick' AND Emp_date = '" + DateTom + "'", con);
+            SqlCommand com = new SqlCommand("update Employee_Request set Emp_Status = '" + EmpSts + "' where Employee_ID = '" + EmpId + "'AND Drop_Pickup='Pick' AND Emp_date = '" + DateToday + "'", con);
             int kk = com.ExecuteNonQuery();
             if (kk != 0)
             {

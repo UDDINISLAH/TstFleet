@@ -179,6 +179,15 @@ namespace TstFleet
                             cmd.Connection = con;
                             con.Open();
                             cmd.ExecuteNonQuery();
+                            gvbind();
+                            drppck = ddlCountry.SelectedItem.Value;
+                            DataView dataView = dt.DefaultView;
+                            if (!string.IsNullOrEmpty(drppck))
+                            {
+                                dataView.RowFilter = "Drop_Pickup = '" + drppck + "'";
+                            }
+                            GridView1.DataSource = dataView;
+                            GridView1.DataBind();
                             con.Close();
                         }
                     }
@@ -187,7 +196,7 @@ namespace TstFleet
                 preference += 1;
             }
 
-            Response.Redirect(Request.Url.AbsoluteUri);
+            //Response.Redirect(Request.Url.AbsoluteUri);
         }
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)

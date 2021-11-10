@@ -55,6 +55,19 @@ namespace TstFleet
             Gndr = Session["Gender"].ToString();
             SqlConnection con = new SqlConnection(strConnString);
             con.Open();
+
+            TimeSpan start = TimeSpan.Parse("22:00:00"); // 10 PM
+            TimeSpan end = TimeSpan.Parse("13:00:00");   // 2 AM           
+
+            TimeSpan now = DateTime.Now.TimeOfDay;
+
+            if ((now > start) && (now < end))
+            {
+                //match found
+            }
+
+
+
             if (DropDownList2.SelectedValue == "Drop")
             {
                // todaydate = DateTime.Now.AddDays(0).ToString("MM/dd/yyyy");
@@ -298,9 +311,9 @@ namespace TstFleet
                 DropDownList1.Items[2].Enabled = true;
                 DropDownList1.Items[3].Enabled = true;
                 
-                DropDownList1.Items[4].Enabled = false;
-                DropDownList1.Items[5].Enabled = false;
-                DropDownList1.Items[6].Enabled = false;
+                DropDownList1.Items[4].Enabled = true;
+                DropDownList1.Items[5].Enabled = true;
+                DropDownList1.Items[6].Enabled = true;
 
             }
             else
@@ -311,9 +324,9 @@ namespace TstFleet
                 DropDownList1.Items[5].Enabled = true;
                 DropDownList1.Items[6].Enabled = true;
 
-                DropDownList1.Items[1].Enabled = false;
-                DropDownList1.Items[2].Enabled = false;
-                DropDownList1.Items[3].Enabled = false;
+                DropDownList1.Items[1].Enabled = true;
+                DropDownList1.Items[2].Enabled = true;
+                DropDownList1.Items[3].Enabled = true;
             }
         }
         

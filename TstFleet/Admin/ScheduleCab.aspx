@@ -198,7 +198,7 @@
                             </asp:TemplateField>
 
                             <asp:BoundField DataField="Emp_Date" HeaderText="Date" DataFormatString="{0:dd/MM/yyyy}" ReadOnly="true" />
-                            <asp:TemplateField HeaderText="Emp Status">
+                            <asp:TemplateField HeaderText="Ride Type">
                                 <ItemTemplate>
                                     <asp:Label ID="DropPickup" runat="server" Text='<%# Eval("Drop_Pickup")%>'></asp:Label>
                                 </ItemTemplate>
