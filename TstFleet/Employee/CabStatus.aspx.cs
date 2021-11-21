@@ -211,6 +211,8 @@ namespace TstFleet
             SqlDataReader DR1 = cmd1.ExecuteReader();
             if (DR1.Read())
             {
+                TextBox4.Visible = false;
+                TextBox8.Visible = false;
                 if (TextBox4.Text!=null)
                 {
                     Button1.Visible = false;

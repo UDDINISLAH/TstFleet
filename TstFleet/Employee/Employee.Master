@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>R Bharat</title>
-    <%-- <meta name="viewport" content="width=device-width, initial-scale=1" />--%>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link href="../css/styles.css" rel="stylesheet" />
     <link href="../css/w3.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
         #Button22 {
             background: #ef0707;
             color: #fff;
-            font-size: 30px;
+            font-size: 27px;
         }
     </style>
 </head>
@@ -52,7 +52,7 @@
                 <li class="active">
                     <a href="EmployeeWelcome.aspx">
                         <i class="glyphicon glyphicon-briefcase"></i>
-                        Request For Cab
+                        Request
                     </a>
                 </li>
                 <li class="active">
@@ -64,7 +64,7 @@
                 <li class="active">
                     <a href="UserProfile.aspx">
                         <i class="glyphicon glyphicon-user"></i>
-                        User Profile
+                        Profile
                     </a>
                 </li>            
             </ul>

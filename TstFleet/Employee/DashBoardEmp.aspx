@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%--   <div>
         <h3><asp:Label ID="Label1" runat="server" Text=""></asp:Label></h3> 
     </div>--%>
@@ -120,6 +121,17 @@
             display: revert;
             color: black;
         }
+
+        @media only screen and (max-width: 600px) {
+            .mydatagrid td {
+                padding: 0px;
+                font-size: 12px;
+            }
+
+            .header {               
+                font-size: 14px;
+            }
+        }
     </style>
     <div style="padding: 0% 38% 3% 40%;">
         <p style="color: black; font-size: large; margin-left: -56%;">
@@ -129,54 +141,48 @@
         </p>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="table-responsive" style="background-color: #fff; box-shadow: 0 0 8px #000000;">
-                    <div style="font-family: ui-monospace; padding: 5px 25px 0px 25px; background: darkcyan; color: black;">
-                        <h4 style="border: ridge; width: fit-content;">Filters To Select
+    <div class="table-responsive" style="background-color: #fff; box-shadow: 0 0 8px #000000;">
+        <div style="font-family: ui-monospace; padding: 5px 25px 0px 25px; background: darkcyan; color: black;">
+            <h4 style="border: ridge; width: fit-content;">Filters To Select
                         <asp:DropDownList ID="ddlCountry" runat="server" AutoPostBack="true" OnSelectedIndexChanged="Country_Changed">
                             <asp:ListItem Text="Select All" Value=""></asp:ListItem>
                             <asp:ListItem Text="Pick" Value="Pick"></asp:ListItem>
                             <asp:ListItem Text="Drop" Value="Drop"></asp:ListItem>
                         </asp:DropDownList>
-                        </h4>
-                    </div>
-                    <asp:GridView ID="GridView1" runat="server" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" AllowPaging="True" AllowSorting="true" PageSize="50" AutoGenerateColumns="False" DataKeyNames="id" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDataBound="GridView1_RowDataBound">
-                        <Columns>
-                            <asp:BoundField DataField="Employee_ID" HeaderText="Employee_ID." ReadOnly="true" />
-                            <%--   <asp:BoundField DataField="Employee_Name" HeaderText="Employee_Name" ReadOnly="true" />
+            </h4>
+        </div>
+        <asp:GridView ID="GridView1" runat="server" CssClass="mydatagrid" PagerStyle-CssClass="pager" HeaderStyle-CssClass="header" RowStyle-CssClass="rows" AllowPaging="True" AllowSorting="true" PageSize="50" AutoGenerateColumns="False" DataKeyNames="id" OnPageIndexChanging="GridView1_PageIndexChanging" OnRowDataBound="GridView1_RowDataBound">
+            <Columns>
+                <asp:BoundField DataField="Employee_ID" HeaderText="Emp ID" ReadOnly="true" />
+                <%--   <asp:BoundField DataField="Employee_Name" HeaderText="Employee_Name" ReadOnly="true" />
                             <asp:BoundField DataField="Mobile_Number" HeaderText="Mobile_Number" ReadOnly='true' />
                             <asp:BoundField DataField="Address" HeaderText="Address" ReadOnly="true" />--%>
-                            <asp:BoundField DataField="Emp_Date" HeaderText="Date" DataFormatString="{0:dd/MM/yyyy}" ReadOnly="true" />
-                            <asp:BoundField DataField="Drop_Pickup" HeaderText="Drop_Pickup" ReadOnly="true" />
-                            <asp:TemplateField HeaderText="Time">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblCity" runat="server" Text='<%# Eval("Time")%>'></asp:Label>
-                                </ItemTemplate>
-                                <EditItemTemplate>
-                                    <asp:DropDownList ID="ddlCities" runat="server">
-                                        <asp:ListItem Text="05:00 AM" Value="05:00 AM"></asp:ListItem>
-                                        <asp:ListItem Text="06:00 AM" Value="06:00 AM"></asp:ListItem>
-                                        <asp:ListItem Text="07:00 AM" Value="07:00 AM"></asp:ListItem>
-                                    </asp:DropDownList>
-                                </EditItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Status">
-                                <ItemTemplate>
-                                    <asp:Label ID="lblsts" runat="server" Text='<%# Eval("Status")%>'></asp:Label>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                            <%--   <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true"
+                <asp:BoundField DataField="Emp_Date" HeaderText="Date" DataFormatString="{0:dd/MM/yyyy}" ReadOnly="true" />
+                <asp:BoundField DataField="Drop_Pickup" HeaderText="Drop/Pick" ReadOnly="true" />
+                <asp:TemplateField HeaderText="Time">
+                    <ItemTemplate>
+                        <asp:Label ID="lblCity" runat="server" Text='<%# Eval("Time")%>'></asp:Label>
+                    </ItemTemplate>
+                    <EditItemTemplate>
+                        <asp:DropDownList ID="ddlCities" runat="server">
+                            <asp:ListItem Text="05:00 AM" Value="05:00 AM"></asp:ListItem>
+                            <asp:ListItem Text="06:00 AM" Value="06:00 AM"></asp:ListItem>
+                            <asp:ListItem Text="07:00 AM" Value="07:00 AM"></asp:ListItem>
+                        </asp:DropDownList>
+                    </EditItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Status">
+                    <ItemTemplate>
+                        <asp:Label ID="lblsts" runat="server" Text='<%# Eval("Status")%>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <%--   <asp:CommandField ButtonType="Link" ShowEditButton="true" ShowDeleteButton="true"
                                 EditText="<i aria-hidden='true' class='glyphicon glyphicon-pencil'></i>" DeleteText="<i aria-hidden='true' class='glyphicon glyphicon-trash'></i>"
                                 CancelText="<i aria-hidden='true' class='glyphicon glyphicon-remove'></i>" UpdateText="<i aria-hidden='true' class='glyphicon glyphicon-floppy-disk'></i>" />--%>
-                        </Columns>
-                    </asp:GridView>
-                    <div>
-                        <asp:Label ID="lblresult" runat="server"></asp:Label>
-                    </div>
-                </div>
-            </div>
+            </Columns>
+        </asp:GridView>
+        <div>
+            <asp:Label ID="lblresult" runat="server"></asp:Label>
         </div>
     </div>
 </asp:Content>

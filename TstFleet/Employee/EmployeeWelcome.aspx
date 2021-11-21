@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
     <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
-    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css'
-        media="screen" />
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css' media="screen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap -->
     <!-- Bootstrap DatePicker -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" type="text/css" />
@@ -48,7 +48,7 @@
             justify-content: center;
             align-items: center;
             height: inherit;
-            padding: 20px;
+            padding: 0px;
         }
 
         form {
@@ -211,27 +211,6 @@
             background: #a3c2c2;
         }
 
-        @media (min-width: 568px) {
-            .name-item, .city-item {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-
-                .name-item input, .name-item div {
-                    width: calc(50% - 20px);
-                }
-
-                    .name-item div input {
-                        width: 97%;
-                    }
-
-                    .name-item div label {
-                        display: block;
-                        padding-bottom: 5px;
-                    }
-        }
-
         .mydatagrid {
             width: 100%;
             border: solid 5px black;
@@ -317,7 +296,42 @@
             color: #ffffff;
             border: 2px solid #ededed;
         }
+
+        @media only screen and (max-width: 600px) {
+            form {
+                width: 100%;
+                padding-bottom: 1%;
+                border-radius: 6px;
+                background: #fff;
+                box-shadow: 0 0 8px #000000;
+                margin-left: 1%;
+            }
+
+            .name-item, .city-item {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+                .name-item input, .name-item div {
+                    width: calc(50% - 20px);
+                }
+
+                    .name-item div input {
+                        width: 97%;
+                    }
+
+                    .name-item div label {
+                        display: block;
+                        padding-bottom: 5px;
+                    }
+
+            body, div, form, input, select, textarea, label, p {
+                line-height: 100%;
+            }
+        }
     </style>
+
     <script type="text/javascript">
         $(function () {
             $('[id*=datepicker]').datepicker({
@@ -380,12 +394,12 @@
                 <label for="eaddress">Time<span>*</span></label>
                 <asp:DropDownList ID="DropDownList1" runat="server" class="form-control" Style="width: calc(100% - 10px);" required>
                     <asp:ListItem Text="" style="visibility: hidden"></asp:ListItem>
-                    <asp:ListItem Text="05:00 AM" Value="05:00 AM" Enabled="false"></asp:ListItem>
-                    <asp:ListItem Text="06:00 AM" Value="06:00 AM" Enabled="false"></asp:ListItem>
-                    <asp:ListItem Text="07:00 AM" Value="07:00 AM" Enabled="false"></asp:ListItem>
-                    <asp:ListItem Text="10:00 PM" Value="10:00 PM" Enabled="false"></asp:ListItem>
-                    <asp:ListItem Text="11:00 PM" Value="11:00 PM" Enabled="false"></asp:ListItem>
-                    <asp:ListItem Text="12:00 AM" Value="12:00 AM" Enabled="false"></asp:ListItem>
+                    <asp:ListItem Text="05:00 AM" Value="05:00:00" Enabled="false"></asp:ListItem>
+                    <asp:ListItem Text="06:00 AM" Value="06:00:00" Enabled="false"></asp:ListItem>
+                    <asp:ListItem Text="07:00 AM" Value="07:00:00" Enabled="false"></asp:ListItem>
+                    <asp:ListItem Text="10:00 PM" Value="22:00:00" Enabled="false"></asp:ListItem>
+                    <asp:ListItem Text="11:00 PM" Value="23:00:00" Enabled="false"></asp:ListItem>
+                    <asp:ListItem Text="12:00 AM" Value="24:00:00" Enabled="false"></asp:ListItem>
                 </asp:DropDownList>
             </div>
         </div>

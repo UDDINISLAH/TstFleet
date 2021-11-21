@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!-- Bootstrap -->
     <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
@@ -84,12 +85,21 @@
                         <div style="width: auto; margin: auto; color: black;">
                             <h1>Request Status for Pickup</h1>                         
                             <asp:Label ID="Label1" runat="server" Style="font-size: x-large; font-weight: bolder; background: yellow;border-style: solid;"></asp:Label>
-
+                            <div style="visibility:hidden">
+                                 <div>My Status</div>
+                              <div>
+                                    <asp:Label ID="TextBox4" runat="server" Style="text-align: center;"></asp:Label>
+                                </div>
+                                <div>
+                                    <asp:Label ID="TextBox8" runat="server" Style="text-align: center;"></asp:Label>
+                                </div>
+                            </div> 
+                           
                             <div class="grid-container">
                                 <div>Office Time</div>
                                 <div>Cab Time</div>
                                 <div>Status</div>
-                                <div>My Status</div>
+                               
                                 <div>Cab No</div>
                                 <div>Driver Info</div>
                                 <div>
@@ -100,10 +110,7 @@
                                 </div>
                                 <div>
                                     <asp:Label ID="TextBox3" runat="server" Style="text-align: center;"></asp:Label>
-                                </div>
-                                <div>
-                                    <asp:Label ID="TextBox4" runat="server" Style="text-align: center;"></asp:Label>
-                                </div>
+                                </div>                              
                                 <div>
                                     <asp:Label ID="lbl1" runat="server" Style="text-align: center;"></asp:Label>
                                 </div>
@@ -120,9 +127,9 @@
                             <div class="grid-container" style="width: fit-content;margin: auto;margin-top: 5px;">
                                 <asp:GridView ID="GridView1" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataKeyNames="id">
                                     <Columns>
-                                        <asp:BoundField DataField="Employee_Name" HeaderText="Employee Name" />
-                                        <asp:BoundField DataField="Emp_Status" HeaderText="Employee Status" />
-                                        <asp:BoundField DataField="PickupTime" HeaderText="Pickup Time" />
+                                        <asp:BoundField DataField="Employee_Name" HeaderText="Emp Name" />
+                                        <asp:BoundField DataField="Emp_Status" HeaderText="Emp Status" />
+                                        <asp:BoundField DataField="PickupTime" HeaderText="Pick Time" />
                                     </Columns>
                                 </asp:GridView>
                             </div>
@@ -140,8 +147,7 @@
                            <div class="grid-container">
                                 <div>Office Time</div>
                                 <div>Cab Time</div>
-                                <div>Status</div>
-                                <div>My Status</div>
+                                <div>Status</div>                               
                                 <div>Cab No</div>
                                 <div>Driver Info</div>
                                 <div>
@@ -153,9 +159,7 @@
                                 <div>
                                     <asp:Label ID="TextBox7" runat="server" Style="text-align: center;"></asp:Label>
                                 </div>
-                                <div>
-                                    <asp:Label ID="TextBox8" runat="server" Style="text-align: center;"></asp:Label>
-                                </div>
+                                
                                 <div>
                                     <asp:Label ID="lbl3" runat="server" Style="text-align: center;"></asp:Label>
                                 </div>
@@ -174,9 +178,9 @@
                            <div class="grid-container" style="width: fit-content;margin: auto;margin-top: 5px;"">
                                     <asp:GridView ID="GridView2" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataKeyNames="id">
                                         <Columns>
-                                            <asp:BoundField DataField="Employee_Name" HeaderText="Employee Name" />
-                                            <asp:BoundField DataField="Emp_Status" HeaderText="Employee Status" />
-                                            <asp:BoundField DataField="PickupTime" HeaderText="Pickup Time" />
+                                            <asp:BoundField DataField="Employee_Name" HeaderText="Emp Name" />
+                                            <asp:BoundField DataField="Emp_Status" HeaderText="Emp Status" />
+                                            <asp:BoundField DataField="PickupTime" HeaderText="Pick Time" />
                                         </Columns>
                                     </asp:GridView>                               
                             </div>
@@ -200,10 +204,10 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: auto auto auto auto auto auto;
-            grid-gap: 2px;
+            grid-template-columns: auto auto auto auto auto;
+            /*grid-gap: 2px;*/
             background-color: #365770;
-            padding: 8px;
+            padding: 5px;
         }
 
             .grid-container > div {
@@ -261,10 +265,12 @@
 
             .card {
                 padding: 0px;
+                width: 120%;
+                margin-left: -29px;
             }
 
             .grid-container > div {
-                font-size: 15px;
+                font-size: 12px;
             }
 
             .cal {

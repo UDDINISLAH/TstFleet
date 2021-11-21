@@ -56,15 +56,15 @@ namespace TstFleet
             SqlConnection con = new SqlConnection(strConnString);
             con.Open();
 
-            TimeSpan start = TimeSpan.Parse("22:00:00"); // 10 PM
-            TimeSpan end = TimeSpan.Parse("13:00:00");   // 2 AM           
+            //TimeSpan start = TimeSpan.Parse("22:00:00"); // 10 PM
+            //TimeSpan end = TimeSpan.Parse("13:00:00");   // 2 AM           
 
-            TimeSpan now = DateTime.Now.TimeOfDay;
+            //TimeSpan now = DateTime.Now.TimeOfDay;
 
-            if ((now > start) && (now < end))
-            {
-                //match found
-            }
+            //if ((now > start) && (now < end))
+            //{
+            //    //match found
+            //}
 
 
 
